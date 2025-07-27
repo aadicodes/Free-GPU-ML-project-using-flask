@@ -12,7 +12,8 @@ Example app that demonstrates how to run a Flask app with a free GPU using Googl
 
 ## Instructions
 
-- Open the Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/aadicodes/Free-GPU-ML-project-using-flask/blob/main/notebook.ipynb)
+- Open the Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aadicodes/flask-gpu-app/blob/main/notebook.ipynb)
+
 
 - Go to [ngrok.com](ngrok.com), get a free API token, and in the Colab replace`YOUR-AUTHTOKEN-HERE` with the token.
 
