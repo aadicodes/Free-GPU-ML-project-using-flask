@@ -13,7 +13,8 @@ pipe.to("cuda")
 
 # Start flask app and set to ngrok
 app = Flask(__name__)
-run_with_ngrok(app)
+#run_with_ngrok(app)
+run_with_ngrok(app=app, auth_token="30TDlr4bckXD5uo9p8YCDFQILEH_7ohXgPHUv9NTn5H8fEw3")
 
 @app.route('/')
 def initial():
