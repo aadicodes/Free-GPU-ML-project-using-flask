@@ -16,7 +16,7 @@ from io import BytesIO
 pipe = StableDiffusionPipeline.from_pretrained(
     "prompthero/openjourney",
     torch_dtype=torch.float16,
-    revision="fp16"
+    variant="fp16"
 )
 
 pipe.to("cuda")
