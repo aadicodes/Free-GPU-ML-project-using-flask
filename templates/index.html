@@ -24,12 +24,12 @@
             </li>
           </ul>
     </form>
-  <p><strong>Image Description given :</strong> <span id="myLabel"></span></p>
+  <p><strong>Image Description given :</strong> <span id="given_prompt">{{ given_prompt }}</span></p>
 
   <script>
     function updateLabel() {
       const text = document.getElementById("prompt").value;
-      document.getElementById("myLabel").textContent = text;
+      document.getElementById("given_prompt").textContent = text;
     }
   </script>
     <img src="{{ generated_image|default("https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/0715034d-4044-4c55-9131-e4bfd6dd20ca/2_4x.png?format=512w", true) }}" class="mainImg" alt="Generated Image">
