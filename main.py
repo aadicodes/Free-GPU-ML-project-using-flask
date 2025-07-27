@@ -9,6 +9,7 @@ import base64
 from io import BytesIO
 
 # Load model
+pipe = StableDiffusion3Pipeline.from_pretrained("stabilityai/stable-diffusion-3.5-large",torch_dtype=torch.float16)
 pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v3-5", variant="fp16", torch_dtype=torch.float16)
 pipe.to("cuda")
 
@@ -27,7 +28,9 @@ def generate_image():
   prompt = request.form['prompt-input']
   print(f"Generating an image of {prompt}")
 
-  image = pipe(prompt).images[0]
+  #image = pipe(prompt).images[0]
+  image = pipe(prompt, num_inference_steps=30, guidance_scale=7.5).images[0]
+
   print("Image generated! Converting image ...")
   
   buffered = BytesIO()
