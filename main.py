@@ -3,15 +3,22 @@ from flask_ngrok2 import run_with_ngrok
 from flask import Flask, render_template, request
 
 import torch
-#from diffusers import StableDiffusionPipeline
-from diffusers import StableDiffusion3Pipeline
+from diffusers import StableDiffusionPipeline
+#from diffusers import StableDiffusion3Pipeline
 
 import base64
 from io import BytesIO
 
 # Load model
-pipe = StableDiffusion3Pipeline.from_pretrained("stabilityai/stable-diffusion-3.0",torch_dtype=torch.float16)
+#stabilityai/stable-diffusion-2-1
+#pipe = StableDiffusion3Pipeline.from_pretrained("stabilityai/stable-diffusion-3.0",torch_dtype=torch.float16)
 #pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v3-5", variant="fp16", torch_dtype=torch.float16)
+pipe = StableDiffusionPipeline.from_pretrained(
+    "prompthero/openjourney",
+    torch_dtype=torch.float16,
+    revision="fp16"
+)
+
 pipe.to("cuda")
 
 # Start flask app and set to ngrok
