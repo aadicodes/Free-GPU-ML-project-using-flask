@@ -34,8 +34,8 @@ def initial():
 def generate_image():
   prompt = request.form['prompt-input']
   print(f"Generating an image of {prompt}")
-
-  image = pipe(prompt, num_inference_steps=50, guidance_scale=7.5).images[0]
+  generator = torch.Generator("cuda").manual_seed(42)
+  image = pipe(prompt, num_inference_steps=70, guidance_scale=8.5, generator=generator).images[0]
 
   print("Image generated! Converting image ...")
   
