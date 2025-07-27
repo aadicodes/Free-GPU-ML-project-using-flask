@@ -5,5 +5,4 @@ scipy
 ftfy
 accelerate
 pyngrok
-flask_ngrok
 flask-ngrok2
