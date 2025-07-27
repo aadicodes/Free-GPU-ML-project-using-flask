@@ -30,13 +30,12 @@ def initial():
   return render_template('index.html')
 
 
-@app.route('/submit-prompt', methods=['POST'])
+@app.route('/words-turnto-picture', methods=['POST'])
 def generate_image():
   prompt = request.form['prompt-input']
   print(f"Generating an image of {prompt}")
 
-  #image = pipe(prompt).images[0]
-  image = pipe(prompt, num_inference_steps=30, guidance_scale=7.5).images[0]
+  image = pipe(prompt, num_inference_steps=50, guidance_scale=7.5).images[0]
 
   print("Image generated! Converting image ...")
   
